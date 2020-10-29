@@ -9,12 +9,17 @@
   background: #f4f4f4;
   border-radius: 13px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.1s;
 }
-#question ul.list-unstyled li:hover,
-#question ul.list-unstyled li:focus {
-  background: #e8e7e7;
+#question ul.list-unstyled li.right {
+  background: green;
+  color: #fff;
 }
+#question ul.list-unstyled li.wrong {
+  background: red;
+  color: #fff;
+}
+
 .option__tag {
   padding: 5px 9px;
   border-radius: 50%;

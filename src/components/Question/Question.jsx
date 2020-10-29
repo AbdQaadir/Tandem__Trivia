@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import './Question.css'
 
 const getLetter = str => {
@@ -16,13 +17,33 @@ const getLetter = str => {
         
     }
 }
-const Question = ({item, index, handleChoose}) => {
+const Question = ({item, index, handleNext }) => {
+    const [right, setRight] = useState("");
+    const [wrong, setWrong] = useState("");
     const {question, options, correct} = item;
+    let timer = null;
+    const setTimer = (option) => {
+        timer = setTimeout(() => { handleNext(item.id, item.correct === option)}, 450);
+    }
+    const clearTimer = () => {
+        clearTimeout(timer);
+    }
+    const markQuestion = (option, correct) => {
+        clearTimer(timer);
+        if(option === correct){
+            setRight(option);
+            setWrong(option);
+        }else{
+            setWrong(option);
+            setRight(correct);
+        }
+        setTimer(option);        
+    }
     return (
        <div id="question">
             <h4>{index + 1}) {question}</h4>
             <ul className="list-unstyled">
-                {options?.map((option, idx) => <li key={idx} onClick={() => handleChoose({option, correct})}><span className="option__tag">{getLetter(idx)}</span> {option}</li>)}
+                {options?.map((option, idx) => <li key={idx} onClick={() => markQuestion(option, correct)} className={option === right ? "right" : option === wrong ? "wrong" : ""}><span className="option__tag">{getLetter(idx)}</span> {option}</li>)}
             </ul>
        </div>
     )
