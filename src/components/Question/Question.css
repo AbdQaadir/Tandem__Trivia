@@ -1,0 +1,25 @@
+#question h4 {
+  padding: 10px;
+  margin-bottom: 30px;
+  color: #aa3a3a;
+}
+#question ul.list-unstyled li {
+  padding: 16px 15px;
+  margin: 9px 0;
+  background: #f4f4f4;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#question ul.list-unstyled li:hover,
+#question ul.list-unstyled li:focus {
+  background: #e8e7e7;
+}
+.option__tag {
+  padding: 5px 9px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  background: #f8e4b7;
+  margin-right: 10px;
+}
