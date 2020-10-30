@@ -24,7 +24,7 @@ const Question = ({item, index, handleNext }) => {
     const {question, options, correct} = item;
     let timer = null;
     const setTimer = (option) => {
-        timer = setTimeout(() => { handleNext(item.id, item.correct === option);  setActive(true)}, 450);
+        timer = setTimeout(() => { handleNext(item.id, item.correct === option);  setActive(true)}, 1000);
     }
     const clearTimer = () => {
         clearTimeout(timer);
@@ -47,7 +47,7 @@ const Question = ({item, index, handleNext }) => {
        <div id="question">
             <h4>{index + 1}) {question}</h4>
             <ul className="list-unstyled">
-                {options?.map((option, idx) => <li key={idx} onClick={() => markQuestion(option, correct)} className={option === right ? "right" : option === wrong ? "wrong" : ""}><span className="option__tag">{getLetter(idx)}</span> {option}</li>)}
+                {options?.map((option, idx) => <li key={idx} onClick={() => markQuestion(option, correct)} className={option === right ? "right" : option === wrong ? "wrong" : option !== wrong && option !== right && !active ? "disabled" : ""}><span className="option__tag">{getLetter(idx)}</span> {option}</li>)}
             </ul>
        </div>
     )

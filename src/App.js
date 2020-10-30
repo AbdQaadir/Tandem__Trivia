@@ -29,7 +29,6 @@ function App() {
 
     
     const handleNext = (id, condition) => {
-      // [...final].map((item) => item.id === id ? item.pass = condition : item)
       condition && setScore((prevProps) => prevProps + 1);
       if(active < 9){
           setActive((prevProps) => prevProps + 1);
@@ -37,14 +36,25 @@ function App() {
         setCompleted(true)
       }
     }
-    useEffect(() => {
+
+    const resetGame = () => {
+      setData([]);
+      setScore(0);
+      setCompleted(false);
+      setActive(0);
+      init();
+    }
+    const init = () => {
       let allData= []
       dataJson.forEach((item, idx) => {
         allData = [...allData, {id: idx + 1, question: item.question, options: [...item.incorrect, item.correct].sort(), correct: item.correct, pass: false}];
       });
       allData = [...allData].filter((item) => indexArray.includes(item.id));
       setData(allData);
-
+    }
+    useEffect(() => {
+     
+      init();
       // eslint-disable-next-line
     }, []);
 
@@ -53,7 +63,7 @@ function App() {
       <Router>
         <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route  path="/quiz" render={(props) => <QuizPage {...props} score={score} index={active} data={data} handleNext={handleNext} completed={completed} />}/>
+            <Route  path="/quiz" render={(props) => <QuizPage {...props} resetGame={resetGame} score={score} index={active} data={data} handleNext={handleNext} completed={completed} />}/>
         </Switch>
      </Router>
     

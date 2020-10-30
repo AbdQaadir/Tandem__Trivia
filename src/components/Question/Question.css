@@ -19,7 +19,10 @@
   background: red;
   color: #fff;
 }
-
+#question ul.list-unstyled li.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 .option__tag {
   padding: 5px 9px;
   border-radius: 50%;
