@@ -6,23 +6,28 @@ This project/trivia game is a Code Challeng for Apprentice Software Engineer at 
 
 ## Built with
 
-This project was built with React, Hooks and react-router-dom
+This project was built with (React, Hooks and react-router-dom);
 
 ## Installing/Getting Started
 
-Fork and clone this repository
+```shell
+    fork the repository
+    git clone https://github.com/your/your-project.git
+    cd your-project/
+    npm install
+```
 
-> Install the dependencies
+## Start the Server
 
-### `npm install`
-
-> Start the Server
-
-### `npm start`
+```shell
+    npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 > To build the app, run
 
-### `npm run build`
+```shell
+    npm run build
+```
