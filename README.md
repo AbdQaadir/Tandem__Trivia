@@ -6,7 +6,7 @@ This project/trivia game is a Code Challeng for Apprentice Software Engineer at 
 
 ## Built with
 
-This project was built with (React, Hooks and react-router-dom);
+This project was built with (React, Hooks, react-router-dom and Bootstrap);
 
 ## Installing/Getting Started
 
