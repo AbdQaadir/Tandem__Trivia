@@ -18,26 +18,30 @@ const getLetter = str => {
     }
 }
 const Question = ({item, index, handleNext }) => {
+    const [active, setActive] = useState(true);
     const [right, setRight] = useState("");
     const [wrong, setWrong] = useState("");
     const {question, options, correct} = item;
     let timer = null;
     const setTimer = (option) => {
-        timer = setTimeout(() => { handleNext(item.id, item.correct === option)}, 450);
+        timer = setTimeout(() => { handleNext(item.id, item.correct === option);  setActive(true)}, 450);
     }
     const clearTimer = () => {
         clearTimeout(timer);
     }
     const markQuestion = (option, correct) => {
-        clearTimer(timer);
-        if(option === correct){
-            setRight(option);
-            setWrong(option);
-        }else{
-            setWrong(option);
-            setRight(correct);
-        }
-        setTimer(option);        
+        if(active){
+            setActive(false);
+            clearTimer(timer);
+            if(option === correct){
+                setRight(option);
+                setWrong(option);
+            }else{
+                setWrong(option);
+                setRight(correct);
+            }
+            setTimer(option);   
+        }   
     }
     return (
        <div id="question">

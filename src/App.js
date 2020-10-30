@@ -9,11 +9,10 @@ import Homepage from './pages/Homepage/Homepage'
 import QuizPage from './pages/QuizPage/QuizPage'; 
 
 function App() {
+  const [data, setData] = useState([]);
   const [score, setScore]= useState(0);
-  const [active, setActive] = useState(0);
-  const [final, setFinal] = useState([]);
-  let data = [];
-
+  const [completed, setCompleted] = useState(false);
+  const [active, setActive] = useState(0)  
   const shuffle = (array) => {
     var tmp, current, top = array.length;
     if(top) while(--top) {
@@ -25,28 +24,36 @@ function App() {
     return array;
   }
   const indexArray = shuffle([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]).slice(0,10);
-    dataJson.forEach((item, idx) => {
-      data = [...data, {id: idx + 1, question: item.question, options: [...item.incorrect, item.correct].sort(), correct: item.correct, pass: false}];
-    });
-    data = [...data].filter((item) => indexArray.includes(item.id));
+    
     
 
     
     const handleNext = (id, condition) => {
+      // [...final].map((item) => item.id === id ? item.pass = condition : item)
+      condition && setScore((prevProps) => prevProps + 1);
       if(active < 9){
           setActive((prevProps) => prevProps + 1);
       }else{
-        console.log(final);
+        setCompleted(true)
       }
     }
     useEffect(() => {
-      setFinal(data);
-    }, [])
+      let allData= []
+      dataJson.forEach((item, idx) => {
+        allData = [...allData, {id: idx + 1, question: item.question, options: [...item.incorrect, item.correct].sort(), correct: item.correct, pass: false}];
+      });
+      allData = [...allData].filter((item) => indexArray.includes(item.id));
+      setData(allData);
+
+      // eslint-disable-next-line
+    }, []);
+
+    console.log(score);
   return (
       <Router>
         <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route  path="/quiz" render={(props) => <QuizPage {...props} index={active} data={data} handleNext={handleNext} />}/>
+            <Route  path="/quiz" render={(props) => <QuizPage {...props} score={score} index={active} data={data} handleNext={handleNext} completed={completed} />}/>
         </Switch>
      </Router>
     
