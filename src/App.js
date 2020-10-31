@@ -13,42 +13,36 @@ function App() {
   const [completed, setCompleted] = useState(false);
   const [active, setActive] = useState(0)  
 
-  
-    
-    
-
-    
-    const handleNext = (id, condition) => {
-      condition && setScore((prevProps) => prevProps + 1);
-      if(active < 9){
-          setActive((prevProps) => prevProps + 1);
-      }else{
-        setCompleted(true)
-      }
+  const handleNext = (id, condition) => {
+    condition && setScore((prevProps) => prevProps + 1);
+    if(active < 9){
+        setActive((prevProps) => prevProps + 1);
+    }else{
+      setCompleted(true)
     }
+  }
 
-    const resetGame = () => {
-      setData([]);
-      setScore(0);
-      setCompleted(false);
-      setActive(0);
-      init();
-    }
-    const init = () => {
-      // let allData= []
-      // dataJson.forEach((item, idx) => {
-      //   allData = [...allData, {id: idx + 1, question: item.question, options: [...item.incorrect, item.correct].sort(), correct: item.correct, pass: false}];
-      // });
-      // allData = [...allData].filter((item) => indexArray.includes(item.id));
-      setData(sortedData);
-    }
-    useEffect(() => {
+  // Method to reset/restart the game
+  const resetGame = () => {
+    setData([]);
+    setScore(0);
+    setCompleted(false);
+    setActive(0);
+    init();
+  }
 
-      init();
-      // eslint-disable-next-line
-    }, []);
+  const init = () => {
+    // Set the data with the sorted data from utils.js
+    setData(sortedData);
+  }
+    
+  useEffect(() => {
+    // Call the init function on component mounts
+    init();
+    // eslint-disable-next-line
+  }, []);
 
-    console.log(data);  
+
   return (
       <Router>
         <Switch>

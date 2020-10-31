@@ -31,3 +31,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ```shell
     npm run build
 ```
+
+## Features I'd love to add
+
+> Make the quiz time based.
+> Keeping records of the user's score to determine high score.
+> Allow the user to determine the number of questions within a specified range.
