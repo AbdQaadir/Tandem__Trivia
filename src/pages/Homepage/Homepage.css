@@ -12,15 +12,15 @@
   color: #fff;
   background: #28abb9;
   border-radius: 23px;
-  box-shadow: 1px 3px 20px 3px rgba(155, 155, 155, 0.3);
+  box-shadow: 1px 6px 17px 3px rgba(0, 0, 0, 0.3);
 }
 .homepage__btn:hover {
   color: #effad3;
+  box-shadow: 1px 3px 20px 6px rgba(0, 0, 0, 0.3);
 }
-.homepage__instruction {
-  margin-top: 30px;
-}
+
 .homepage__instruction li {
-  font-size: 15px;
+  font-size: 14px;
   margin: 10px 0;
+  color: #cccfd6;
 }
