@@ -2,11 +2,13 @@
 
 # Tandem Code Challenge - Trivia Game
 
-This project/trivia game is a Code Challeng for Apprentice Software Engineer at [Tandem](https://madeintandem.com/).
+This project/trivia game is a Coding Challenge for Apprentice Software Engineer at [Tandem](https://madeintandem.com/).
 
 ## Built with
 
-This project was built with (React, Hooks, react-router-dom and Bootstrap);
+This project was built with React, Hooks, react-router-dom and Bootstrap.
+Font: Google Font
+Testing Tools: Jest and Enzyme
 
 ## Installing/Getting Started
 
