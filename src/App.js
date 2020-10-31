@@ -58,16 +58,14 @@ function App() {
       // eslint-disable-next-line
     }, []);
 
-    console.log(score);
+    console.log(data);  
   return (
       <Router>
         <Switch>
             <Route exact path="/" component={Homepage} />
             <Route  path="/quiz" render={(props) => <QuizPage {...props} resetGame={resetGame} score={score} index={active} data={data} handleNext={handleNext} completed={completed} />}/>
         </Switch>
-     </Router>
-    
-  
+     </Router>  
   );
 }
 

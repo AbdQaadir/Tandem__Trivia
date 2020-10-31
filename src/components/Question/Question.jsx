@@ -45,7 +45,7 @@ const Question = ({item, index, handleNext }) => {
     }
     return (
        <div id="question">
-            <h4>{index + 1}) {question}</h4>
+            <h4 id="question__text">{index + 1}) {question}</h4>
             <ul className="list-unstyled">
                 {options?.map((option, idx) => <li key={idx} onClick={() => markQuestion(option, correct)} className={option === right ? "right" : option === wrong ? "wrong" : option !== wrong && option !== right && !active ? "disabled" : ""}><span className="option__tag">{getLetter(idx)}</span> {option}</li>)}
             </ul>
