@@ -26,7 +26,13 @@ This project was built with (React, Hooks, react-router-dom and Bootstrap);
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-> To build the app, run
+## Run Tests
+
+```shell
+    npm test
+```
+
+## Build the App
 
 ```shell
     npm run build
