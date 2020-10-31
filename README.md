@@ -12,12 +12,12 @@ Testing Tools: Jest and Enzyme
 
 ## Acceptance Criteria
 
-• A user can view questions.
-• Questions with their multiple choice options must be displayed one at a time.
-• Questions should not repeat in a round.
-• A user can select only 1 answer out of the 4 possible answers.
-• The correct answer must be revealed after a user has submitted their answer
-• A user can see the score they received at the end of the round
+- A user can view questions.
+- Questions with their multiple choice options must be displayed one at a time.
+- Questions should not repeat in a round.
+- A user can select only 1 answer out of the 4 possible answers.
+- The correct answer must be revealed after a user has submitted their answer
+- A user can see the score they received at the end of the round
 
 ## Installing/Getting Started
 
@@ -51,8 +51,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Features I'd love to add
 
-> Make the quiz time based.
-
-> Keeping records of the user's score to determine high score.
-
-> Allow the user to determine the number of questions within a specified range.
+1. Make the quiz time based.
+2. Keeping records of the user's score to determine high score.
+3. Allow the user to determine the number of questions within a specified range.
