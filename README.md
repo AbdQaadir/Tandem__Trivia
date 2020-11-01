@@ -3,6 +3,7 @@
 # Tandem Code Challenge - Trivia Game
 
 This project/trivia game is a Coding Challenge for Apprentice Software Engineer at [Tandem](https://madeintandem.com/).
+Deployed Link: [Link](https://abdqaadir-tandem-trivia.netlify.app/).
 
 ## Built with
 
