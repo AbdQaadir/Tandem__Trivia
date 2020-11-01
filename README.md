@@ -2,14 +2,14 @@
 
 # Tandem Code Challenge - Trivia Game
 
-This project/trivia game is a Coding Challenge for Apprentice Software Engineer at [Tandem](https://madeintandem.com/).
+This project/trivia game is a Coding Challenge for Apprentice Software Engineer at [Tandem](https://madeintandem.com/).\
 Deployed Link: [Link](https://abdqaadir-tandem-trivia.netlify.app/).
 
 ## Built with
 
-This project was built with React, Hooks, react-router-dom and Bootstrap.
-Font: Google Font
-Testing Tools: Jest and Enzyme
+Main Stack: React, Hooks, react-router-dom and Bootstrap.\
+Font: Google Font.\
+Testing Tools: Jest and Enzyme\
 
 ## Acceptance Criteria
 
@@ -35,7 +35,7 @@ Testing Tools: Jest and Enzyme
     npm start
 ```
 
-Runs the app in the development mode.\
+Run the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Run Tests
