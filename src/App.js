@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import sortedData from './utils';
+import {sortData, shuffle} from './utils';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
@@ -22,18 +22,13 @@ function App() {
     }
   }
 
-  // Method to reset/restart the game
-  const resetGame = () => {
+  const init = () => {
+    const arr = shuffle()
     setData([]);
     setScore(0);
     setCompleted(false);
     setActive(0);
-    init();
-  }
-
-  const init = () => {
-    // Set the data with the sorted data from utils.js
-    setData(sortedData);
+    setData(sortData(arr));
   }
     
   useEffect(() => {
@@ -46,8 +41,8 @@ function App() {
   return (
       <Router>
         <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route  path="/quiz" render={(props) => <QuizPage {...props} resetGame={resetGame} score={score} index={active} data={data} handleNext={handleNext} completed={completed} />}/>
+            <Route exact path="/" render={(props) => <Homepage {...props} init={init} />} />
+            <Route  path="/quiz" render={(props) => <QuizPage {...props} score={score} index={active} data={data} handleNext={handleNext} completed={completed} />}/>
         </Switch>
      </Router>  
   );

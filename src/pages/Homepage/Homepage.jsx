@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import './Homepage.css'
 
-const Homepage = () => {
+const Homepage = ({init}) => {
     return (
         <div className="container-fluid" id="homepage">
             <div className="row h-100 align-items-center justify-content-center">
@@ -14,7 +14,7 @@ const Homepage = () => {
                         <li>You can only choose one option</li>
                         <li>The game will move to the next question automatically 500ms after you chosen an option</li>
                     </ul>
-                    <Link to="quiz" className="btn homepage__btn">Get Started</Link>
+                    <Link to="quiz" className="btn homepage__btn" onClick={() => init()}>Get Started</Link>
                 </div>
             </div>
         </div>
